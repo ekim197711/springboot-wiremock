@@ -34,6 +34,8 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     //    wiremock
     testImplementation "org.wiremock.integrations:wiremock-spring-boot:3.0.2"
+    // Equals Verifier
+    testImplementation 'nl.jqno.equalsverifier:equalsverifier:3.17.1'
 }
 
 tasks.named('test') {
