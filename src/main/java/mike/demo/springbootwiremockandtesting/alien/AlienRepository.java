@@ -6,13 +6,12 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 
-public interface AlienRepository extends CrudRepository<Alien, Long> {
+public interface AlienRepository extends CrudRepository<AlienEntity, Long> {
 
 
     @Query("""
-                    SELECT A from Alien A        
-                    LEFT JOIN FETCH A.skills S
-                    LEFT JOIN FETCH A.origin O
+                    SELECT A from AlienEntity A        
+                    LEFT JOIN FETCH A.skillEntities S                   
             """)
-    public List<Alien> fetchSomeAliens();
+    public List<AlienEntity> fetchSomeAliens();
 }

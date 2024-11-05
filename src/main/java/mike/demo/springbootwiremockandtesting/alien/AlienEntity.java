@@ -12,7 +12,7 @@ import java.util.Set;
 @Builder
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class Alien {
+public class AlienEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -22,5 +22,5 @@ public class Alien {
     @ManyToMany
     @JoinTable(name = "alien_skill", joinColumns = @JoinColumn(name = "alien_id"),
             inverseJoinColumns = @JoinColumn(name = "skill_id"))
-    private Set<Skill> skills;
+    private Set<SkillEntity> skillEntities;
 }

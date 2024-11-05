@@ -1,5 +1,6 @@
 package mike.demo.springbootwiremockandtesting.alien;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,12 +15,14 @@ import java.util.Set;
 @Builder
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class Skill {
+public class SkillEntity {
+
     @Id
     @GeneratedValue
     private int id;
     private String skillName;
 
-    @ManyToMany(mappedBy = "skills")
-    private Set<Alien> aliens;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "skillEntities")
+    private Set<AlienEntity> aliens;
 }

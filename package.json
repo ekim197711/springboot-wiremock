@@ -1,0 +1,11 @@
+{
+  "name": "springboot-wiremock-and-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "curl_spaceship": "curl -v -H \"accept-encoding: gzip, deflate, br, zstd\" http://localhost:8080/spaceship/findall"
+  },
+  "author": "",
+  "license": "ISC"
+}

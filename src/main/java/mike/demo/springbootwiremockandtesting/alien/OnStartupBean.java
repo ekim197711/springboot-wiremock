@@ -16,15 +16,15 @@ public class OnStartupBean {
 
     @PostConstruct
     public void init() {
-        Skill running = skillRepository.save(Skill.builder().skillName("Running")
+        SkillEntity running = skillRepository.save(SkillEntity.builder().skillName("Running")
                 .build());
-        Skill jumping = skillRepository.save(Skill.builder().skillName("Jumping")
+        SkillEntity jumping = skillRepository.save(SkillEntity.builder().skillName("Jumping")
                 .build());
-        alienRepository.save(Alien.builder()
+        alienRepository.save(AlienEntity.builder()
                 .origin(AlienOrigin.Humanoid)
                 .age(30)
                 .name("Mike")
-                .skills(Set.of(running, jumping))
+                .skillEntities(Set.of(running, jumping))
                 .build());
         log.info("Alien created...");
     }

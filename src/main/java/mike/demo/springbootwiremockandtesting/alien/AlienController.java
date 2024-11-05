@@ -14,7 +14,12 @@ public class AlienController {
     private final AlienRepository alienRepository;
 
     @GetMapping("/aliens")
-    public List<Alien> getAliens() {
+    public List<AlienEntity> getAliens() {
         return alienRepository.fetchSomeAliens();
+    }
+
+    @GetMapping("/aliens/standard")
+    public Iterable<AlienEntity> getAliensStandard() {
+        return alienRepository.findAll();
     }
 }
